@@ -1,0 +1,17 @@
+$maximum: (
+    "mobile": "59.5em",
+    "laptop": "62em",
+    "L-laptop": "80em"
+);
+
+@mixin maximum($size) {
+    @media (min-width: map-get($maximum, $size)) {
+        @content;
+    }
+}
+
+@mixin maximum($size) {
+    @media (max-width: map-get($maximum, $size)) {
+        @content;
+    }
+}
